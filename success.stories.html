@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Success Stories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+        .success-stories-container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+        
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .student-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .student-card:hover .student-photo-circle {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .student-photo-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 20px auto 15px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s ease;
+            border: 4px solid #3498db;
+        }
+        
+        .student-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .story-display {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .story-display.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .story-content {
+            background: white;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transform: translateY(50px);
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .story-display.active .story-content {
+            transform: translateY(0);
+        }
+        
+        .story-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .story-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-right: 20px;
+            border: 3px solid #3498db;
+        }
+        
+        .story-name {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .story-university {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .story-text {
+            color: #34495e;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .story-rating {
+            color: #f1c40f;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            background: #c0392b;
+            transform: rotate(90deg);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .control-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .students-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .student-photo-circle {
+                width: 100px;
+                height: 100px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .story-content {
+                padding: 20px;
+            }
+            
+            .story-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .story-photo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .success-stories-container {
+                padding: 20px 15px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .student-name {
+                font-size: 1rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .control-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-stories-container">
+        <h2>Our Student Success Stories</h2>
+        <div class="students-grid">
+            <!-- Sunita R. -->
+            <div class="student-card" onclick="showStory('sunitar')">
+                <div class="student-photo-circle" style="background-image: url('images/Sunita-R.jpg')"></div>
+                <div class="student-name">Sunita R.</div>
+            </div>
+
+            <!-- Dhruv Chauhan. -->
+            <div class="student-card" onclick="showStory('dhruvc')">
+                <div class="student-photo-circle" style="background-image: url('images/Dhruv-Chauhan.jpg')"></div>
+                <div class="student-name">Dhruv Chauhan</div>
+            </div>
+
+            <!-- Shivani K. -->
+            <div class="student-card" onclick="showStory('shivanik')">
+                <div class="student-photo-circle" style="background-image: url('images/Shivani-k.jpg')"></div>
+                <div class="student-name">Shivani K.</div>
+            </div>
+
+            <!-- Tanishq Jayant. -->
+            <div class="student-card" onclick="showStory('tanishqj')">
+                <div class="student-photo-circle" style="background-image: url('images/Tanishq-Jayant.jpg')"></div>
+                <div class="student-name">Tanishq Jayant</div>
+            </div>
+
+            <!-- Fatima S. -->
+            <div class="student-card" onclick="showStory('fatimas')">
+                <div class="student-photo-circle" style="background-image: url('')"></div>
+                <div class="student-name">Fatima S.</div>
+            </div>
+        </div>
+
+        <!-- Story Display Area (initially hidden) -->
+        <div id="story-display" class="story-display">
+            <div class="story-content">
+                <button onclick="hideStory()" class="close-btn">×</button>
+                <div class="story-header">
+                    <div id="story-photo" class="story-photo"></div>
+                    <div>
+                        <div id="story-name" class="story-name"></div>
+                        <div id="story-university" class="story-university"></div>
+                    </div>
+                </div>
+                <div id="story-text" class="story-text"></div>
+                <div id="story-rating" class="story-rating"></div>
+                <div class="controls">
+                    <button class="control-btn" onclick="navigateStory('prev')"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="control-btn" onclick="navigateStory('next')">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Student data
+        const studentStories = {
+            sunitar: {
+                name: "Sunita R.",
+                photo: "images/Sunita-R.jpg",
+                university: "Geneva School of Diplomacy, Switzerland",
+                text: "I always wanted to study international relations in Europe but didn't know where to start. Globetrek helped me discover a niche program in Switzerland that perfectly matched my interests. They supported me from application to visa to accommodation. Today, I'm studying at one of the most diplomatic hubs in the world!",
+                rating: 5
+            },
+            dhruvc: {
+                name: "Dhruv Chauhan",
+                photo: "images/Dhruv-Chauhan.jpg",
+                university: "University of Portsmouth, UK",
+                text: "Coming from a technical background, I wanted a fast-track top-up program in the UK. Globetrek guided me to the perfect fit at Portsmouth London campus. I had an offer within 10 days, and my visa was approved in under 3 weeks. Their team made the process simple and stress-free.",
+                rating: 4
+            },
+            shivanik: {
+                name: "Shivani K.",
+                photo: "images/Shivani-k.jpg",
+                university: "Seneca College, Canada",
+                text: "From course selection to SOPs and GIC funding guidance, Globetrek was there for me every step of the way. What I loved most was their honesty, no false promises, just clear communication. I'm now pursuing a business diploma in Toronto and couldn't be happier.",
+                rating: 5
+            },
+            tanishqj: {
+                name: "Tanishq Jayant",
+                photo: "images/Tanishq-Jayant.jpg",
+                university: "Deakin University, Australia",
+                text: "I had multiple refusals before approaching Globetrek. They helped rebuild my profile and guided me into a course that matched my goals and visa credibility. I not only got accepted but also received a partial scholarship!",
+                rating: 5
+            },
+            fatimas: {
+                name: "Fatima S.",
+                photo: "",
+                university: "Arizona State University, USA",
+                text: "What impressed me most was Globetrek's attention to detail. They helped me craft a strong SOP, assisted with financial planning, and made sure my visa application was bulletproof. I'm now living my dream in the U.S.",
+                rating: 4
+            }
+        };
+
+        let currentStudent = null;
+        const studentIds = Object.keys(studentStories);
+
+        // Show story function
+        function showStory(studentId) {
+            const story = studentStories[studentId];
+            if (!story) return;
+            
+            currentStudent = studentId;
+            
+            document.getElementById('story-name').textContent = story.name;
+            document.getElementById('story-university').textContent = story.university;
+            document.getElementById('story-photo').style.backgroundImage = `url('${story.photo}')`;
+            document.getElementById('story-text').textContent = story.text;
+            
+            // Generate star rating
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                stars += i < story.rating 
+                    ? '<i class="fas fa-star"></i>' 
+                    : '<i class="far fa-star"></i>';
+            }
+            document.getElementById('story-rating').innerHTML = stars;
+            
+            // Show the story display
+            document.getElementById('story-display').classList.add('active');
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide story function
+        function hideStory() {
+            document.getElementById('story-display').classList.remove('active');
+            
+            // Re-enable body scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Navigate between stories
+        function navigateStory(direction) {
+            if (!currentStudent) return;
+            
+            const currentIndex = studentIds.indexOf(currentStudent);
+            let newIndex;
+            
+            if (direction === 'next') {
+                newIndex = (currentIndex + 1) % studentIds.length;
+            } else {
+                newIndex = (currentIndex - 1 + studentIds.length) % studentIds.length;
+            }
+            
+            showStory(studentIds[newIndex]);
+        }
+
+        // Close modal when clicking outside content
+        document.getElementById('story-display').addEventListener('click', function(e) {
+            if (e.target === this) hideStory();
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('story-display').classList.contains('active')) return;
+            
+            if (e.key === 'Escape') hideStory();
+            if (e.key === 'ArrowLeft') navigateStory('prev');
+            if (e.key === 'ArrowRight') navigateStory('next');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | GLOBETREK OVERSEAS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #013d65;
+            padding-bottom: 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h2 {
+            color: #013050;
+        }
+        .info-item {
+            margin-bottom: 20px;
+        }
+        .info-item i {
+            margin-right: 10px;
+            color: #01395f;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        textarea {
+            min-height: 150px;
+        }
+        button {
+            background-color: #02395d;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #00385d;
+        }
+        .map {
+            margin-top: 40px;
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="https://www.globetrekoverseas.com/images/logo.png" alt="Globetrek Overseas Logo" height="100">
+    </div>
+    
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Reach out with questions, comments, or business inquiries.</p>
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            
+            <div class="info-item">
+                <i>📧</i> <strong>Email:</strong> Headoffice@globetrekoverseas.com
+            </div>
+            
+            <div class="info-item">
+                <i>📱</i> <strong>Phone:</strong> +91 9311331899
+            </div>
+            
+            <div class="info-item">
+                <i>🏢</i> <strong>Address:</strong><br>
+                Tower-A, ATS BOUQUET, 618, Block B <br>
+                Sector 132, Noida, Uttar Pradesh 201304<br>
+            </div>
+            
+            <div class="info-item">
+                <i>🕒</i> <strong>Business Hours:</strong><br>
+                Monday-Friday: 10:00 AM - 6:00 PM<br>
+                Saturday-Sunday: Closed
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Phone Number">
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.530090416702!2d77.378296!3d28.5100428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce91c984af61b%3A0xf7c472e577438194!2sTower-A%2C%20ATS%20BOUQUET%2C%20618%2C%20Block%20B%2C%20Sector%20132%2C%20Noida%2C%20Uttar%20Pradesh%20201304!5e0!3m2!1sen!2sin!4v1712345678901!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</body>
+</html>

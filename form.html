@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Counselling Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #e8f5fd;
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom checkbox styles */
+    input[type="checkbox"] {
+      accent-color: #1677ff;
+      width: 1.2rem;
+      height: 1.2rem;
+      cursor: pointer;
+    }
+    /* Underline decoration for the heading underline bar */
+    .underline-bar {
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: #ef6c00;
+      border-radius: 2px;
+      margin-top: 0.15rem;
+    }
+    /* Custom select dropdown icon to refine default */
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%231677ff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem center;
+      background-size: 1rem;
+      padding-right: 2rem;
+    }
+    /* Remove spinner from number input for better mobile UX */
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+  </style>
+</head>
+<body>
+  <main class="max-w-7xl mx-auto py-12 px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center lg:items-start gap-12">
+    
+    <!-- Form Section -->
+    <section class="flex-1 max-w-xl bg-white p-8 rounded-xl shadow-lg">
+      <h1 class="text-3xl font-extrabold text-gray-900">
+        Get <span class="text-gray-900">FREE Counselling Today!</span>
+      </h1>
+      <div class="underline-bar"></div>
+      <p class="mt-4 text-gray-600 leading-relaxed text-sm">
+        Enter your details and our expert will reach out to you to discuss your plans. By the way, all our services are free!
+      </p>
+
+      <form action="#" method="POST" class="mt-8 space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-1">
+            <label for="first_name" class="block text-xs font-medium text-gray-700 mb-1">First name<span class="text-orange-600">*</span></label>
+            <input required type="text" id="first_name" name="first_name" placeholder="First name" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+          </div>
+          <div class="flex-1">
+            <label for="last_name" class="block text-xs font-medium text-gray-700 mb-1">Last name<span class="text-orange-600">*</span></label>
+            <input required type="text" id="last_name" name="last_name" placeholder="Last name" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-xs font-medium text-gray-700 mb-1">Email address<span class="text-orange-600">*</span></label>
+          <input required type="email" id="email" name="email" placeholder="you@example.com" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+        </div>
+
+        <div class="flex gap-2">
+          <label for="mobile" class="block w-full text-xs font-medium text-gray-700">
+            Mobile number<span class="text-orange-600">*</span>
+          </label>
+        </div>
+        <div class="flex gap-2">
+          <input type="text" disabled value="+91" aria-label="Country code" class="w-16 rounded-md border border-gray-300 bg-gray-100 text-gray-600 text-sm py-2 px-3 select-none" />
+          <input required type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" pattern="[0-9]{10,15}" class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+          <div>
+            <label for="study_destination" class="block text-xs font-medium text-gray-700 mb-1">Your preferred study destination<span class="text-orange-600">*</span></label>
+            <select required id="study_destination" name="study_destination" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+              <option value="" disabled selected>Select</option>
+              <option>USA</option>
+              <option>Canada</option>
+              <option>Australia</option>
+              <option>UK</option>
+              <option>New Zealand</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="start_date" class="block text-xs font-medium text-gray-700 mb-1">When would you like to start?<span class="text-orange-600">*</span></label>
+            <select required id="start_date" name="start_date" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+              <option value="" disabled selected>Select</option>
+              <option>Immediately</option>
+              <option>Within 3 months</option>
+              <option>Within 6 months</option>
+              <option>Within 1 year</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mode_counselling" class="block text-xs font-medium text-gray-700 mb-1">Preferred mode of counselling<span class="text-orange-600">*</span></label>
+            <select required id="mode_counselling" name="mode_counselling" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+              <option value="" disabled selected>Select</option>
+              <option>Online</option>
+              <option>In-person</option>
+              <option>Phone</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="study_level" class="block text-xs font-medium text-gray-700 mb-1">Preferred study level<span class="text-orange-600">*</span></label>
+            <select required id="study_level" name="study_level" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+              <option value="" disabled selected>Select</option>
+              <option>English Language</option>
+              <option>School</option>
+              <option>Undergraduate</option>
+              <option>Postgraduate</option>
+              <option>Doctorate</option>
+              <option>University Preparation</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="funding" class="block text-xs font-medium text-gray-700 mb-1">How would you fund your education?<span class="text-orange-600">*</span></label>
+            <select required id="funding" name="funding" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+              <option value="" disabled selected>Select</option>
+              <option>Self-funded</option>
+              <option>Scholarship</option>
+              <option>Education loan</option>
+              <option>Others</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-4 text-gray-700 text-xs">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="agree_terms" required />
+            <span>
+              I agree to GlobetrekOverseas 
+              <a href="#" class="text-blue-600 font-semibold underline">Terms</a> and
+              <a href="#" class="text-blue-600 font-semibold underline">privacy policy</a>
+            </span>
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="contact_permission" />
+            <span>Please contact me by phone, email or SMS to assist with my enquiry</span>
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="receive_offers" />
+            <span>I would like to receive updates and offers from GlobetrekOverseas</span>
+          </label>
+        </div>
+
+        <button type="submit" class="mt-6 inline-block bg-blue-600 text-white text-sm font-semibold rounded-full px-8 py-3 hover:bg-blue-700 transition">
+          Avail FREE Counselling
+        </button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+
+

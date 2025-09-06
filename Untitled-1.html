@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Counselling Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(-45deg, #e8f5fd, #d1e9ff, #bfe6ff, #e8f5fd);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Animated background elements */
+    .bg-bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bg-bubbles li {
+      position: absolute;
+      list-style: none;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.15);
+      bottom: -160px;
+      animation: square 25s infinite;
+      transition-timing-function: linear;
+      border-radius: 50%;
+    }
+
+    .bg-bubbles li:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+      width: 80px;
+      height: 80px;
+    }
+
+    .bg-bubbles li:nth-child(2) {
+      left: 20%;
+      animation-delay: 2s;
+      animation-duration: 17s;
+      width: 60px;
+      height: 60px;
+    }
+
+    .bg-bubbles li:nth-child(3) {
+      left: 25%;
+      animation-delay: 4s;
+      width: 100px;
+      height: 100px;
+    }
+
+    .bg-bubbles li:nth-child(4) {
+      left: 40%;
+      animation-delay: 0s;
+      animation-duration: 22s;
+      width: 50px;
+      height: 50px;
+    }
+
+    .bg-bubbles li:nth-child(5) {
+      left: 70%;
+      animation-delay: 3s;
+      width: 70px;
+      height: 70px;
+    }
+
+    .bg-bubbles li:nth-child(6) {
+      left: 80%;
+      animation-delay: 2s;
+      width: 90px;
+      height: 90px;
+    }
+
+    .bg-bubbles li:nth-child(7) {
+      left: 32%;
+      animation-delay: 6s;
+      width: 120px;
+      height: 120px;
+    }
+
+    .bg-bubbles li:nth-child(8) {
+      left: 55%;
+      animation-delay: 8s;
+      animation-duration: 18s;
+      width: 40px;
+      height: 40px;
+    }
+
+    .bg-bubbles li:nth-child(9) {
+      left: 25%;
+      animation-delay: 10s;
+      animation-duration: 20s;
+      width: 60px;
+      height: 60px;
+    }
+
+    .bg-bubbles li:nth-child(10) {
+      left: 90%;
+      animation-delay: 5s;
+      width: 80px;
+      height: 80px;
+    }
+
+    @keyframes square {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 50%;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 20%;
+      }
+    }
+
+    /* Form styling */
+    .form-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Custom checkbox styles */
+    input[type="checkbox"] {
+      accent-color: #1677ff;
+      width: 1.2rem;
+      height: 1.2rem;
+      cursor: pointer;
+    }
+    
+    /* Underline decoration for the heading underline bar */
+    .underline-bar {
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: #ef6c00;
+      border-radius: 2px;
+      margin-top: 0.15rem;
+    }
+    
+    /* Custom select dropdown icon to refine default */
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%231677ff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem center;
+      background-size: 1rem;
+      padding-right: 2rem;
+    }
+    
+    /* Remove spinner from number input for better mobile UX */
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+    /* Button animation */
+    .btn-submit {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-submit:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-submit::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+
+    .btn-submit:hover::after {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated background elements -->
+  <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <h1 class="text-3xl font-extrabold text-gray-900 text-center">
+      Get <span class="text-blue-600">FREE Counselling Today!</span>
+    </h1>
+    <div class="underline-bar mx-auto"></div>
+    <p class="mt-4 text-gray-600 leading-relaxed text-sm text-center">
+      Enter your details and our expert will reach out to you to discuss your plans. By the way, all our services are free!
+    </p>
+
+    <form action="#" method="POST" class="mt-8 space-y-6">
+      <div class="flex gap-4">
+        <div class="flex-1">
+          <label for="first_name" class="block text-xs font-medium text-gray-700 mb-1">First name<span class="text-orange-600">*</span></label>
+          <input required type="text" id="first_name" name="first_name" placeholder="First name" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+        </div>
+        <div class="flex-1">
+          <label for="last_name" class="block text-xs font-medium text-gray-700 mb-1">Last name<span class="text-orange-600">*</span></label>
+          <input required type="text" id="last_name" name="last_name" placeholder="Last name" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+        </div>
+      </div>
+
+      <div>
+        <label for="email" class="block text-xs font-medium text-gray-700 mb-1">Email address<span class="text-orange-600">*</span></label>
+        <input required type="email" id="email" name="email" placeholder="you@example.com" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+      </div>
+
+      <div class="flex gap-2">
+        <label for="mobile" class="block w-full text-xs font-medium text-gray-700">
+          Mobile number<span class="text-orange-600">*</span>
+        </label>
+      </div>
+      <div class="flex gap-2">
+        <input type="text" disabled value="+91" aria-label="Country code" class="w-16 rounded-md border border-gray-300 bg-gray-100 text-gray-600 text-sm py-2 px-3 select-none" />
+        <input required type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" pattern="[0-9]{10,15}" class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+        <div>
+          <label for="study_destination" class="block text-xs font-medium text-gray-700 mb-1">Your preferred study destination<span class="text-orange-600">*</span></label>
+          <select required id="study_destination" name="study_destination" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            <option value="" disabled selected>Select</option>
+            <option>USA</option>
+            <option>Canada</option>
+            <option>Australia</option>
+            <option>UK</option>
+            <option>New Zealand</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="start_date" class="block text-xs font-medium text-gray-700 mb-1">When would you like to start?<span class="text-orange-600">*</span></label>
+          <select required id="start_date" name="start_date" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            <option value="" disabled selected>Select</option>
+            <option>Immediately</option>
+            <option>Within 3 months</option>
+            <option>Within 6 months</option>
+            <option>Within 1 year</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="mode_counselling" class="block text-xs font-medium text-gray-700 mb-1">Preferred mode of counselling<span class="text-orange-600">*</span></label>
+          <select required id="mode_counselling" name="mode_counselling" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            <option value="" disabled selected>Select</option>
+            <option>Online</option>
+            <option>In-person</option>
+            <option>Phone</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="study_level" class="block text-xs font-medium text-gray-700 mb-1">Preferred study level<span class="text-orange-600">*</span></label>
+          <select required id="study_level" name="study_level" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            <option value="" disabled selected>Select</option>
+            <option>English Language</option>
+            <option>School</option>
+            <option>Undergraduate</option>
+            <option>Postgraduate</option>
+            <option>Doctorate</option>
+            <option>University Preparation</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="funding" class="block text-xs font-medium text-gray-700 mb-1">How would you fund your education?<span class="text-orange-600">*</span></label>
+          <select required id="funding" name="funding" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            <option value="" disabled selected>Select</option>
+            <option>Self-funded</option>
+            <option>Scholarship</option>
+            <option>Education loan</option>
+            <option>Others</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-4 text-gray-700 text-xs">
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="agree_terms" required />
+          <span>
+            I agree to GlobetrekOverseas 
+            <a href="#" class="text-blue-600 font-semibold underline">Terms</a> and
+            <a href="#" class="text-blue-600 font-semibold underline">privacy policy</a>
+          </span>
+        </label>
+
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="contact_permission" />
+          <span>Please contact me by phone, email or SMS to assist with my enquiry</span>
+        </label>
+
+        <label class="flex items-center gap-2">
+          <input type="checkbox" name="receive_offers" />
+          <span>I would like to receive updates and offers from GlobetrekOverseas</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit mt-6 w-full bg-blue-600 text-white text-sm font-semibold rounded-full px-8 py-3 hover:bg-blue-700 transition">
+        Avail FREE Counselling
+      </button>
+    </form>
+  </div>
+
+  <script>
+    // Simple form validation enhancement
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      
+      form.addEventListener('submit', function(e) {
+        let valid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            valid = false;
+            field.classList.add('border-red-500');
+          } else {
+            field.classList.remove('border-red-500');
+          }
+        });
+        
+        if (!valid) {
+          e.preventDefault();
+          alert('Please fill in all required fields.');
+        } else {
+          // Animation on successful submission
+          const btn = document.querySelector('.btn-submit');
+          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+          btn.disabled = true;
+          
+          // Simulate form submission
+          setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Success!';
+            btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            btn.classList.add('bg-green-600');
+            
+            // Reset form after success
+            setTimeout(() => {
+              form.reset();
+              btn.innerHTML = 'Avail FREE Counselling';
+              btn.disabled = false;
+              btn.classList.remove('bg-green-600');
+              btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            }, 2000);
+          }, 1500);
+          
+          e.preventDefault();
+        }
+      });
+      
+      // Remove red border when user starts typing
+      const inputs = form.querySelectorAll('input, select');
+      inputs.forEach(input => {
+        input.addEventListener('input', function() {
+          this.classList.remove('border-red-500');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
