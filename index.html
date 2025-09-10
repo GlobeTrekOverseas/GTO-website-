@@ -12,11 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
-    <!-- <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <style>
       body {
         font-family: "Inter", sans-serif !important;
@@ -704,6 +701,86 @@
         }
       }
     </style>
+    <style>
+      body {
+        background-color: #e8f5fd;
+        font-family: 'Inter', sans-serif;
+      }
+
+      /* Custom checkbox styles */
+      input[type="checkbox"] {
+        accent-color: #1677ff;
+        width: 1.2rem;
+        height: 1.2rem;
+        cursor: pointer;
+      }
+
+      /* Underline decoration for the heading underline bar */
+      .underline-bar {
+        width: 2.5rem;
+        height: 0.3rem;
+        background-color: #ef6c00;
+        border-radius: 2px;
+        margin-top: 0.15rem;
+      }
+
+      /* Custom select dropdown icon to refine default */
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%231677ff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.7rem center;
+        background-size: 1rem;
+        padding-right: 2rem;
+      }
+
+      /* Remove spinner from number input for better mobile UX */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Modal styles */
+      .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        padding: 1rem;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #6b7280;
+        z-index: 10;
+      }
+
+      .close-button:hover {
+        color: #374151;
+      }
+    </style>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
@@ -744,13 +821,11 @@
                 <a href="law.html"><i class="fas fa-gavel"></i> Law</a>
               </li>
                <li>
-                <a href="IELTS.html"><i class="fas fa-book"></i> IELTS</a>
+                <a href="IELTS.html"><i class="fas fa-book"></i>IELTS</a>
               </li>
-              <li>
-                 <li>
+               <li>
                 <a href="PTE.html"><i class="fas fa-book"></i>PTE</a>
               </li>
-              <li>
             </ul>
           </li>
 
@@ -797,7 +872,7 @@
               <li>
                 <a href="australia.html"><i class="fas fa-landmark"></i> Australia</a>
               </li>
-               <li>
+              <li>
                 <a href="germany.html"><i class="fas fa-landmark"></i> Germany</a>
               </li>
               <li>
@@ -815,7 +890,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <video autoplay muted loop class="hero-video">
-        <source src="video-gto.mov" type="video/mp4" />
+        <source src="video.mp4" type="video/mp4" />
       </video>
       <div class="hero-content">
         <h1 class="font-bold">Your Global Education Journey Starts Here</h1>
@@ -835,7 +910,7 @@
 
             <p>
               At
-              <span class="highlight" !text-[#023e65]><strong>Globetrek Overseas</strong></span>, we believe that education is the most powerful way to transform
+              <span class="highlight"><strong>Globetrek Overseas</strong></span>, we believe that education is the most powerful way to transform
               lives and it should never be limited by borders. Founded with a
               clear mission to simplify and personalize the international study
               journey, Globetrek is more than just a consultancy, we're a
@@ -859,8 +934,8 @@
               Whether you are a student dreaming of top-ranked universities, a
               parent looking for trusted advice, or a channel partner seeking
               ethical collaboration, we provide
-              <span class="highlight"><strong>transparent, technology-driven, and student-first
-                solutions</strong></span>
+              <span class="highlight">transparent, technology-driven, and student-first
+                solutions</span>
               at every step.
             </p>
 
@@ -1019,172 +1094,6 @@
       </div>
     </div>
 
-    <!-- Services Section -->
-    <!-- <div class="container">
-      <div class="header">
-        <h1>Your Pathway to Global Education</h1>
-        <p>
-          We offer a comprehensive suite of services designed to provide
-          students, parents, and partners with a stress-free and strategic
-          overseas education journey.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        Career & Course Counseling 
-    <div class="service-box" data-service="career">
-      <i class="fas fa-graduation-cap service-icon"></i>
-      <h3 class="service-title">Career & Course Counseling</h3>
-      <div class="service-content">
-        <p>Personalized guidance for your educational journey.</p>
-        <span class="read-more">Hover for details</span>
-      </div>
-
-      <div class="service-popup">
-        <!-- <h3 class="popup-title">Career & Course Counseling</h3> 
-        <div class="popup-content">
-          <p style="font-size: 23px">
-            Every student is unique. We offer one-on-one counseling to help
-            you identify the right program, university, and country based on
-            your academic background, career goals, and budget.
-          </p>
-          <p style="font-size: 23px">
-            Our expert counselors have years of experience in the education
-            sector and provide personalized guidance.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- University Selection & Applications 
-    <div class="service-box" data-service="university">
-      <i class="fas fa-university service-icon"></i>
-      <h3 class="service-title">University Selection & Applications</h3>
-      <div class="service-content">
-        <p>Guidance through the entire application process.</p>
-        <span class="read-more">Hover for details</span>
-      </div>
-
-      <div class="service-popup">
-        <!-- <h3 class="popup-title">University Selection & Applications</h3> 
-        <div class="popup-content">
-          <p style="font-size: 23px">
-            We work with a curated list of global universities and
-            institutions. Our team guides you through the entire application
-            process including documentation, SOPs, and interview prep.
-          </p>
-          <p style="font-size: 23px">
-            We help you showcase your strengths effectively and maximize
-            your chances of admission.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Visa Assistance 
-    <div class="service-box" data-service="visa">
-      <i class="fas fa-passport service-icon"></i>
-      <h3 class="service-title">Visa Assistance</h3>
-      <div class="service-content">
-        <p>Expert help with student visa processes.</p>
-        <span class="read-more">Hover for details</span>
-      </div>
-
-      <div class="service-popup">
-        <!-- <h3 class="popup-title">Visa Assistance</h3> 
-        <div class="popup-content">
-          <p style="font-size: 23px">
-            With deep experience in student visa processes, we assist in
-            preparing financial documents, filling visa forms, scheduling
-            appointments, and providing mock interviews.
-          </p>
-          <p style="font-size: 23px">
-            Our visa experts stay updated with the latest regulations and
-            requirements.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scholarships & Funding Guidance 
-    <div class="service-box" data-service="scholarships">
-      <i class="fas fa-hand-holding-usd service-icon"></i>
-      <h3 class="service-title">Scholarships & Funding</h3>
-      <div class="service-content">
-        <p>Help identifying available scholarships.</p>
-        <span class="read-more">Hover for details</span>
-      </div>
-
-      <div class="service-popup">
-        <!-- <h3 class="popup-title">Scholarships & Funding Guidance</h3> 
-        <div class="popup-content">
-          <p style="font-size: 23px">
-            We actively help students identify available scholarships based
-            on academic merit, need, or specific destination offers. We also
-            advise on fee payment strategies and financial documentation.
-          </p>
-          <p style="font-size: 23px">
-            Our team will help you explore all possible funding options.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pre-Departure & Post-Arrival Support 
-    <div class="service-box" data-service="support">
-      <i class="fas fa-plane-departure service-icon"></i>
-      <h3 class="service-title">Pre & Post-Arrival Support</h3>
-      <div class="service-content">
-        <p>Comprehensive support throughout your journey.</p>
-        <span class="read-more">Hover for details</span>
-      </div>
-
-      <div class="service-popup">
-        <!-- <h3 class="popup-title">
-                  Pre-Departure & Post-Arrival Support
-                </h3> 
-        <div class="popup-content">
-          <p style="font-size: 23px">
-            We organize detailed pre-departure briefings that cover
-            everything from packing, travel, accommodation, airport pickups,
-            to adapting to a new culture.
-          </p>
-          <p style="font-size: 23px">
-            Our support continues even after you land, helping you settle in
-            your new environment.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Channel Partner Support 
-    <div class="service-box" data-service="partners">
-      <i class="fas fa-handshake service-icon"></i>
-      <h3 class="service-title">Channel Partner Support</h3>
-      <div class="service-content">
-        <p>Training and support for educational consultants.</p>
-        <span class="read-more">Hover for details</span>
-      </div>
-
-      <div class="service-popup">
-        <!-- <h3 class="popup-title">Channel Partner Support</h3> 
-        <div class="popup-content">
-          <p style="font-size: 23px">
-            We provide our channel partners (educational consultants and
-            agencies) with training, dedicated dashboards, real-time
-            updates, marketing support, and backend processing.
-          </p>
-          <p style="font-size: 23px">
-            Our partnership program is designed to empower educational
-            consultants with the tools and knowledge needed to better serve
-            their clients.
-          </p>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div> -->
-
     <!-- Services -->
     <div class="relative flex size-full min-h-screen flex-col group/design-root">
       <div class="layout-container flex h-full grow flex-col">
@@ -1302,7 +1211,7 @@
 
         <div class="destinations-grid">
           <!-- United Kingdom -->
-          <a href="United kingdom.html" class="country-item" onclick="showCountryPopup(&#39;uk&#39;)">
+          <a href="UK.html" class="country-item" onclick="showCountryPopup(&#39;uk&#39;)">
             <div class="country-bg" style="
                 background-image: url(&#39;https://images.unsplash.com/photo-1486299267070-83823f5448dd?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80&#39;);
               "></div>
@@ -1318,7 +1227,7 @@
           </div>
 
           <!-- Switzerland -->
-          <a href="switzerland.html" class="country-item" onclick="showCountryPopup(&#39;swiss&#39;)">
+          <a href="Switzerland.html" class="country-item" onclick="showCountryPopup(&#39;swiss&#39;)">
             <div class="country-bg" style="
                 background-image: url(&#39;https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80&#39;);
               "></div>
@@ -1977,7 +1886,7 @@
             students achieve their international education dreams.
           </p>
           <div class="footer-section">
-            <h3 class="font-bold" style="
+            <h3 style="
                 text-align: center;
                 margin-bottom: 15px;
                 font-size: 1.2rem;
@@ -2143,13 +2052,160 @@
           border-top: 1px solid #eee;
         ">
         <p style="margin: 0; font-size: 0.9rem; color: #01205e">
-          &copy; 2023 Globetrek Overseas. All Rights Reserved. | Designed By 
+          &copy; 2023 Globetrek Overseas. All Rights Reserved.
         </p>
       </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <div id="counsellingModal" class="modal-backdrop">
+      <div class="modal-content w-full max-w-xl">
+        <button class="close-button" id="closeModal">×</button>
+
+        <div class="p-8">
+          <h1 class="text-3xl font-extrabold text-gray-900">
+            Get <span class="text-gray-900">FREE Counselling Today!</span>
+          </h1>
+          <div class="underline-bar"></div>
+          <p class="mt-4 text-gray-600 leading-relaxed text-sm">
+            Enter your details and our expert will reach out to you to discuss your plans. By the way, all our services are free!
+          </p>
+
+          <form action="#" method="POST" class="mt-8 space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label for="first_name" class="block text-xs font-medium text-gray-700 mb-1">First name<span class="text-orange-600">*</span></label>
+                <input required type="text" id="first_name" name="first_name" placeholder="First name" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+              </div>
+              <div class="flex-1">
+                <label for="last_name" class="block text-xs font-medium text-gray-700 mb-1">Last name<span class="text-orange-600">*</span></label>
+                <input required type="text" id="last_name" name="last_name" placeholder="Last name" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-medium text-gray-700 mb-1">Email address<span class="text-orange-600">*</span></label>
+              <input required type="email" id="email" name="email" placeholder="you@example.com" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+            </div>
+
+            <div class="flex gap-2">
+              <label for="mobile" class="block w-full text-xs font-medium text-gray-700">
+                Mobile number<span class="text-orange-600">*</span>
+              </label>
+            </div>
+            <div class="flex gap-2">
+              <input type="text" disabled value="+91" aria-label="Country code" class="w-16 rounded-md border border-gray-300 bg-gray-100 text-gray-600 text-sm py-2 px-3 select-none" />
+              <input required type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" pattern="[0-9]{10,15}" class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+              <div>
+                <label for="study_destination" class="block text-xs font-medium text-gray-700 mb-1">Your preferred study destination<span class="text-orange-600">*</span></label>
+                <select required id="study_destination" name="study_destination" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                  <option value="" disabled selected>Select</option>
+                  <option>USA</option>
+                  <option>Canada</option>
+                  <option>Australia</option>
+                  <option>UK</option>
+                  <option>New Zealand</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="start_date" class="block text-xs font-medium text-gray-700 mb-1">When would you like to start?<span class="text-orange-600">*</span></label>
+                <select required id="start_date" name="start_date" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                  <option value="" disabled selected>Select</option>
+                  <option>Immediately</option>
+                  <option>Within 3 months</option>
+                  <option>Within 6 months</option>
+                  <option>Within 1 year</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="mode_counselling" class="block text-xs font-medium text-gray-700 mb-1">Preferred mode of counselling<span class="text-orange-600">*</span></label>
+                <select required id="mode_counselling" name="mode_counselling" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                  <option value="" disabled selected>Select</option>
+                  <option>Online</option>
+                  <option>In-person</option>
+                  <option>Phone</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="study_level" class="block text-xs font-medium text-gray-700 mb-1">Preferred study level<span class="text-orange-600">*</span></label>
+                <select required id="study_level" name="study_level" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                  <option value="" disabled selected>Select</option>
+                  <option>English Language</option>
+                  <option>School</option>
+                  <option>Undergraduate</option>
+                  <option>Postgraduate</option>
+                  <option>Doctorate</option>
+                  <option>University Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="funding" class="block text-xs font-medium text-gray-700 mb-1">How would you fund your education?<span class="text-orange-600">*</span></label>
+                <select required id="funding" name="funding" class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                  <option value="" disabled selected>Select</option>
+                  <option>Self-funded</option>
+                  <option>Scholarship</option>
+                  <option>Education loan</option>
+                  <option>Others</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-4 text-gray-700 text-xs">
+              <label class="flex items-center gap-2">
+                <input type="checkbox" name="agree_terms" required />
+                <span>
+                  I agree to GlobetrekOverseas
+                  <a href="#" class="text-blue-600 font-semibold underline">Terms</a> and
+                  <a href="#" class="text-blue-600 font-semibold underline">privacy policy</a>
+                </span>
+              </label>
+
+              <label class="flex items-center gap-2">
+                <input type="checkbox" name="contact_permission" />
+                <span>Please contact me by phone, email or SMS to assist with my enquiry</span>
+              </label>
+
+              <label class="flex items-center gap-2">
+                <input type="checkbox" name="receive_offers" />
+                <span>I would like to receive updates and offers from GlobetrekOverseas</span>
+              </label>
+            </div>
+
+            <button type="submit" class="mt-6 inline-block bg-blue-600 text-white text-sm font-semibold rounded-full px-8 py-3 hover:bg-blue-700 transition">
+              Avail FREE Counselling
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('counsellingModal');
+        const closeButton = document.getElementById('closeModal');
+
+        // Show modal when page loads
+        modal.style.display = 'flex';
+
+        // Close modal when close button is clicked
+        closeButton.addEventListener('click', function () {
+          modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the modal content
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
+    </script>
   </body>
   <script src="./script.js"></script>
 </html>
