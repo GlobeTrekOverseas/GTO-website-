@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study in Australia - GlobeTrek Overseas</title>
+    <title>Study in Switzerland - GlobeTrek Overseas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
-            --primary: #1a365d;
-            --secondary: #2b6cb0;
-            --accent: #1a7f3d; /* Dark green */
+            --primary: #1a365d; /* Dark blue as primary */
+            --secondary: #2b6cb0; /* Medium blue */
+            --accent: #1a7f3d; /* Green as accent color */
             --light: #f7fafc;
             --dark: #2d3748;
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -74,7 +74,7 @@
         }
         
         .logo img {
-            height: 70px;
+            height: 80px;
             margin-right: 20px;
             transition: var(--transition);
         }
@@ -141,7 +141,7 @@
         /* Hero Section */
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), url('images/australia.png') no-repeat center center/cover;
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), url('images/switzerland.png') no-repeat center center/cover;
             color: white;
             display: flex;
             align-items: center;
@@ -283,7 +283,7 @@
             margin: 30px auto 0;
         }
         
-        /* Why Australia Section */
+        /* Why Switzerland Section */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -499,6 +499,7 @@
         .document-list {
             list-style: none;
             margin-bottom: 30px;
+            padding-left: 0;
         }
         
         .document-list li {
@@ -701,6 +702,12 @@
         .modal.active {
             display: flex;
             opacity: 1;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .modal-content {
@@ -781,22 +788,6 @@
             background: linear-gradient(90deg, var(--accent), var(--secondary));
             width: 0%;
             transition: width 0.2s ease;
-        }
-        
-        /* Page Load Animation */
-        @keyframes pageLoad {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-on-load {
-            animation: pageLoad 0.8s ease forwards;
         }
         
         /* Responsive Styles */
@@ -903,11 +894,10 @@
         <div class="container header-content">
             <div class="logo">
                 <img src="https://www.globetrekoverseas.com/images/logo.png" alt="GlobeTrek Overseas Logo">
-               
             </div>
             <nav>
                 <ul id="nav-menu">
-                    <li><a href="#why-australia">Why Australia</a></li>
+                    <li><a href="#why-switzerland">Why Switzerland</a></li>
                     <li><a href="#intakes">Intakes</a></li>
                     <li><a href="#costs">Costs</a></li>
                     <li><a href="#working">Working</a></li>
@@ -923,40 +913,40 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h2>Study in Australia</h2>
-            <p>World-class education, vibrant culture, and exceptional career opportunities await you in Australia</p>
+            <h2>Study in Switzerland</h2>
+            <p>World-class education in the heart of Europe, with stunning landscapes and multicultural environments</p>
             <a href="form.html" class="btn">Start Your Application</a>
         </div>
     </section>
 
-    <!-- Why Australia Section -->
-    <section id="why-australia">
+    <!-- Why Switzerland Section -->
+    <section id="why-switzerland">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Australia?</h2>
-                <p>Discover the benefits of pursuing your education in one of the world's most prestigious academic destinations</p>
+                <h2>Why Choose Switzerland?</h2>
+                <p>Discover the benefits of pursuing your education in one of Europe's most prestigious academic destinations</p>
             </div>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>High-Quality Education</h3>
-                    <p>Australia's universities are renowned for their research and innovation, offering degrees recognized worldwide.</p>
+                    <h3>World-Class Education</h3>
+                    <p>Swiss universities consistently rank among the world's best, particularly in hospitality, business, and STEM fields.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-globe-europe"></i>
                     </div>
-                    <h3>Diverse Culture and Lifestyle</h3>
-                    <p>Experience a multicultural environment with beautiful landscapes and a high quality of life.</p>
+                    <h3>Heart of Europe</h3>
+                    <p>Located in the center of Europe, Switzerland offers easy access to neighboring countries and diverse cultural experiences.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-language"></i>
                     </div>
-                    <h3>Post-Study Work Opportunities</h3>
-                    <p>Australia offers generous post-study work visas, allowing graduates to gain valuable experience.</p>
+                    <h3>Multilingual Environment</h3>
+                    <p>Study in a country with four national languages and numerous English-taught programs, enhancing your language skills.</p>
                 </div>
             </div>
         </div>
@@ -967,21 +957,23 @@
         <div class="container">
             <div class="section-title">
                 <h2>Intakes and Deadlines</h2>
-                <p>Plan your application timeline with our comprehensive intake information</p>
+                <p>Plan your application timeline with our comprehensive intake information for Swiss universities</p>
             </div>
             <div class="intakes-container">
                 <div class="intake-card">
-                    <h3>Main Intake - February</h3>
-                    <p>The primary intake for most courses, with the widest range available.</p>
+                    <h3>Fall Intake - September</h3>
+                    <p>The primary intake for most Swiss universities with the widest range of courses available.</p>
                 </div>
                 <div class="intake-card">
-                    <h3>Secondary Intake - July</h3>
-                    <p>Available for many courses, suitable for students missing the February deadline.</p>
+                    <h3>Spring Intake - February</h3>
+                    <p>Some programs offer a spring intake, though with more limited course selection.</p>
                 </div>
                 <div class="intake-card">
                     <h3>Application Deadlines</h3>
-                    <p>Varires by university but typically closes 3-6 months before the intake.</p>
-                    <p>Some universities offer Rolling admissions allowing students to apply throughout the year </p>
+                    <p>Application deadlines vary by university but typically:<br>
+                    • Fall intake: December to February<br>
+                    • Spring intake: August to October<br>
+                    Some programs may have different deadlines, so check with specific institutions.</p>
                 </div>
             </div>
         </div>
@@ -991,27 +983,27 @@
     <section id="costs">
         <div class="container">
             <div class="section-title">
-                <h2>Cost of Studying in Australia</h2>
-                <p>Get a clear understanding of the expenses involved in studying in Australia</p>
+                <h2>Cost of Studying in Switzerland</h2>
+                <p>Get a clear understanding of the expenses involved in studying in Switzerland</p>
             </div>
             <div class="costs-container">
                 <div class="cost-card">
-                    <h3>Undergraduate Degree</h3>
-                    <div class="cost-amount">₹11 Lakhs/year</div>
+                    <h3>Public Universities</h3>
+                    <div class="cost-amount">₹1-3 Lakhs/year</div>
                     <p>Tuition fees (minimum)/year</p>
-                    <div class="cost-amount">₹12 Lakhs/year</div>
+                    <div class="cost-amount">₹12-15 Lakhs/year</div>
                     <p>Living expenses (minimum)/year</p>
-                    <div class="cost-amount">₹69 Lakhs</div>
+                    <div class="cost-amount">₹39-54 Lakhs</div>
                     <p>Minimum budget for full course (3 years)</p>
                 </div>
                 <div class="cost-card">
-                    <h3>Postgraduate Degree</h3>
-                    <div class="cost-amount">₹12 Lakhs/year</div>
+                    <h3>Private Universities</h3>
+                    <div class="cost-amount">₹8-20 Lakhs/year</div>
                     <p>Tuition fees (minimum)/year</p>
-                    <div class="cost-amount">₹12 Lakhs/year</div>
+                    <div class="cost-amount">₹12-15 Lakhs/year</div>
                     <p>Living expenses (minimum)/year</p>
-                    <div class="cost-amount">₹24 Lakhs</div>
-                    <p>Minimum budget for full course (1 year)</p>
+                    <div class="cost-amount">₹60-105 Lakhs</div>
+                    <p>Minimum budget for full course (3 years)</p>
                 </div>
             </div>
         </div>
@@ -1022,19 +1014,20 @@
         <div class="container">
             <div class="section-title">
                 <h2>Working During Study</h2>
-                <p>Learn about work opportunities for international students in Australia</p>
+                <p>Learn about work opportunities for international students in Switzerland</p>
             </div>
             <div class="working-container">
                 <div class="working-info">
                     <h3><i class="fas fa-briefcase"></i> Work During Studies</h3>
-                    <p>International students on a Student Visa can work:</p>
-                    <p>• Up to 48 hours per fortnight during term time<br>
-                    • Full-time during holidays</p>
-                    <p>Part-time jobs, internships, and placements help students gain valuable experience, build professional networks, and manage living expenses while studying in Australia.</p>
+                    <p>International students from non-EU/EFTA countries can work:</p>
+                    <p>• Up to 15 hours per week during semester<br>
+                    • Full-time during semester breaks<br>
+                    • Only after living in Switzerland for 6 months</p>
+                    <p>Part-time jobs help students gain valuable experience and manage living expenses while studying in Switzerland.</p>
                 </div>
                 <div class="working-info">
-                    <h3><i class="fas fa-file-contract"></i> Post-Study Work Visa</h3>
-                    <p>The Temporary Graduate Visa (subclass 485) allows international graduates to stay and work in Australia for 2-4 years (depending on qualification) after completing their degree. Many students use this period to secure permanent residency and build their careers in Australia.</p>
+                    <h3><i class="fas fa-file-contract"></i> Post-Study Work Opportunities</h3>
+                    <p>Non-EU graduates may stay in Switzerland for 6 months after studies to seek employment. If you find a job, you can apply for a work permit. Switzerland offers excellent career opportunities in various sectors including hospitality, finance, pharmaceuticals, and technology.</p>
                 </div>
             </div>
         </div>
@@ -1045,26 +1038,27 @@
         <div class="container">
             <div class="section-title">
                 <h2>Documentation Preparation Checklist</h2>
-                <p>Ensure you have all the necessary documents for your Australian student visa application</p>
+                <p>Ensure you have all the necessary documents for your Swiss student visa application</p>
             </div>
             <div class="documents-container">
                 <h3>Essential Documents for All Students:</h3>
                 <ul class="document-list">
                     <li><i class="fas fa-passport"></i> Valid Passport <span class="tooltip">?<span class="tooltiptext">Must be valid for the entire duration of your stay</span></span></li>
-                    <li><i class="fas fa-file-alt"></i> Confirmation of Enrolment (CoE)</li>
+                    <li><i class="fas fa-file-alt"></i> Completed Visa Application Form</li>
                     <li><i class="fas fa-camera"></i> Passport-sized Photographs <span class="tooltip">?<span class="tooltiptext">Recent color photographs with white background</span></span></li>
                     <li><i class="fas fa-receipt"></i> Proof of Payment of Fees</li>
-                    <li><i class="fas fa-money-bill-wave"></i> Proof of Financial Capacity <span class="tooltip">?<span class="tooltiptext">Evidence of sufficient funds for tuition, living, and travel</span></span></li>
-                    <li><i class="fas fa-stethoscope"></i> Overseas Student Health Cover (OSHC) <span class="tooltip">?<span class="tooltiptext">Mandatory health insurance for international students</span></span></li>
+                    <li><i class="fas fa-money-bill-wave"></i> Proof of Financial Capacity <span class="tooltip">?<span class="tooltiptext">Bank statements showing sufficient funds for tuition and living expenses (minimum CHF 21,000 per year)</span></span></li>
+                    <li><i class="fas fa-home"></i> Proof of Accommodation in Switzerland</li>
                 </ul>
                 
                 <h3>Academic Documents:</h3>
                 <ul class="document-list">
                     <li><i class="fas fa-certificate"></i> Academic Transcripts and Certificates <span class="tooltip">?<span class="tooltiptext">Official records from your previous educational institutions</span></span></li>
-                    <li><i class="fas fa-language"></i> English Language Proficiency Test Scores (IELTS/TOEFL/PTE) <span class="tooltip">?<span class="tooltiptext">Minimum score requirements vary by institution and course</span></span></li>
-                    <li><i class="fas fa-edit"></i> Genuine Student Statement <span class="tooltip">?<span class="tooltiptext">Explanation of why you want to study in Australia</span></span></li>
+                    <li><i class="fas fa-language"></i> Language Proficiency Test Scores (German/French/Italian/English) <span class="tooltip">?<span class="tooltiptext">Depending on the language of instruction of your program</span></span></li>
+                    <li><i class="fas fa-edit"></i> Motivation Letter <span class="tooltip">?<span class="tooltiptext">A personal essay outlining your academic and career goals</span></span></li>
                     <li><i class="fas fa-file-signature"></i> Letters of Recommendation (LORs) <span class="tooltip">?<span class="tooltiptext">References from academic or professional mentors</span></span></li>
                     <li><i class="fas fa-file-invoice"></i> CV/Resume <span class="tooltip">?<span class="tooltiptext">Detailed summary of your academic and professional background</span></span></li>
+                    <li><i class="fas fa-file-medical"></i> Health Insurance Proof</li>
                 </ul>
                 
                 <button class="btn" id="consultation-btn">Book Free Consultation</button>
@@ -1082,7 +1076,7 @@
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <a href="#why-australia">Why Australia</a>
+                    <a href="#why-switzerland">Why Switzerland</a>
                     <a href="#intakes">Intakes</a>
                     <a href="#costs">Costs</a>
                     <a href="#working">Working</a>
@@ -1116,33 +1110,84 @@
         <div class="modal-content">
             <span class="close-modal" id="close-modal">&times;</span>
             <h2>Book a Free Consultation</h2>
-            <p>Fill in your details and our education experts will contact you shortly.</p>
             <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="tel" placeholder="Your Phone Number" required>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
                 <select required>
-                    <option value="" disabled selected>Select Preferred Destination</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="usa">United States</option>
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
+                    <option value="" disabled selected>Select Preferred Course</option>
+                    <option value="hospitality">Hospitality Management</option>
+                    <option value="business">Business Administration</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="finance">Finance & Banking</option>
                 </select>
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn">Submit Request</button>
             </form>
         </div>
     </div>
 
     <script>
-        // Page load animation
+        // Wait for DOM to fully load
         document.addEventListener('DOMContentLoaded', function() {
+            // Add loaded class to body for fade-in effect
             document.body.classList.add('loaded');
             
-            // Animate sections on scroll
-            const sections = document.querySelectorAll('section');
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
             
-            function checkScroll() {
-                sections.forEach(section => {
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        
+                        // Scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                // Show/hide back to top button
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+                
+                // Update progress bar
+                const winHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset;
+                const trackLength = docHeight - winHeight;
+                const progress = (scrollTop / trackLength) * 100;
+                document.getElementById('progress-bar').style.width = progress + '%';
+                
+                // Section reveal animation
+                document.querySelectorAll('section').forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
                     const triggerBottom = window.innerHeight * 0.8;
                     
@@ -1150,144 +1195,40 @@
                         section.classList.add('visible');
                     }
                 });
-            }
-            
-            // Initial check
-            checkScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkScroll);
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        
-        mobileMenuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Smooth Scrolling for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                }
             });
-        });
-        
-        // Modal functionality
-        const consultationBtn = document.getElementById('consultation-btn');
-        const consultationModal = document.getElementById('consultation-modal');
-        const closeModal = document.getElementById('close-modal');
-        
-        consultationBtn.addEventListener('click', () => {
-            consultationModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        closeModal.addEventListener('click', () => {
-            consultationModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === consultationModal) {
+            
+            // Modal functionality
+            const consultationBtn = document.getElementById('consultation-btn');
+            const consultationModal = document.getElementById('consultation-modal');
+            const closeModal = document.getElementById('close-modal');
+            
+            consultationBtn.addEventListener('click', function() {
+                consultationModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeModal.addEventListener('click', function() {
                 consultationModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
-            }
-            
-            // Progress bar
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progress-bar').style.width = scrolled + '%';
-        });
-        
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
             });
-        });
-        
-        // Animation on scroll for cards
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .cost-card, .intake-card, .working-info');
             
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = 1;
-                    element.style.transform = 'translateY(0)';
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === consultationModal) {
+                    consultationModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
             });
-        };
-        
-        // Set initial state for animated elements
-        document.querySelectorAll('.feature-card, .cost-card, .intake-card, .working-info').forEach(element => {
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        // Trigger once on load
-        window.addEventListener('load', animateOnScroll);
-        
-        // Tooltip initialization
-        const tooltips = document.querySelectorAll('.tooltip');
-        
-        tooltips.forEach(tooltip => {
-            tooltip.addEventListener('mouseenter', function(e) {
-                const tooltipText = this.querySelector('.tooltiptext');
-                tooltipText.style.visibility = 'visible';
-                tooltipText.style.opacity = 1;
-            });
             
-            tooltip.addEventListener('mouseleave', function(e) {
-                const tooltipText = this.querySelector('.tooltiptext');
-                tooltipText.style.visibility = 'hidden';
-                tooltipText.style.opacity = 0;
+            // Initialize all sections for reveal animation
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('visible');
+                }
             });
-        });
-        
-        // Form submission
-        const form = document.querySelector('form');
-        
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your inquiry! Our team will contact you shortly.');
-            consultationModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            form.reset();
         });
     </script>
 </body>
