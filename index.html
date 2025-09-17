@@ -19,6 +19,7 @@
         font-family: "Inter", sans-serif !important;
         background-color: #f5f7fa;
         margin: 0;
+        padding: 0px;
         /* padding: 20px; */
       }
 
@@ -242,8 +243,7 @@
 
       .header {
         text-align: center;
-        margin-bottom: 50px;
-        padding: 20px;
+        padding: 14px;
       }
 
       .header h1 {
@@ -780,6 +780,70 @@
       .close-button:hover {
         color: #374151;
       }
+
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+      .hero-btn {
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .hero-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+      }
+
+      .hero-content {
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .stats-card {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
     </style>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -798,7 +862,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <div class="logo">
-          <img src="images\GTO.png" alt="Globetrek Overseas" />
+          <img src="images\GTO.png" alt="Globetrek Overseas" class="w-full w-auto h-[68px]" />
         </div>
 
         <ul class="nav-menu" id="navMenu">
@@ -866,17 +930,17 @@
                   <i class="fas fa-landmark"></i> United States</a>
               </li>
               <li>
-                <a href="UK.html">
+                <a href="United kingdom.html">
                   <i class="fas fa-landmark"></i> United Kingdom</a>
               </li>
-              <li>
+               <li>
                 <a href="australia.html"><i class="fas fa-landmark"></i> Australia</a>
               </li>
               <li>
-                <a href="germany.html"><i class="fas fa-landmark"></i> Germany</a>
+                <a href="switzerland.html"><i class="fas fa-landmark"></i> Switzerland</a>
               </li>
               <li>
-                <a href="switzerland.html"><i class="fas fa-landmark"></i> Switzerland</a>
+                <a href="germany.html"><i class="fas fa-landmark"></i> Germany</a>
               </li>
               <li class="dropdown-divider"></li>
             </ul>
@@ -888,17 +952,84 @@
       </div>
     </header>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="relative py-20 flex items-center justify-center overflow-hidden">
+      <!-- Video Background -->
       <video autoplay muted loop class="hero-video">
-        <source src="video.mp4" type="video/mp4" />
+        <source src="gto.v.mp4" type="video/mp4" />
       </video>
-      <div class="hero-content">
-        <h1 class="font-bold">Your Global Education Journey Starts Here</h1>
-        <p>
-          We guide students to top universities worldwide with personalized
-          counseling and end-to-end support
-        </p>
-        <a href="form.html" class="hero-btn">Get Free Consultation</a>
+
+      <!-- Dark Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Floating Decorative Elements -->
+      <!-- <div class="floating-elements hidden lg:block">
+        <div class="w-20 h-20 bg-white rounded-full mb-8"></div>
+        <div class="w-12 h-12 bg-blue-400 rounded-full mb-8 ml-8"></div>
+        <div class="w-16 h-16 bg-green-400 rounded-full ml-4"></div>
+      </div> -->
+
+      <!-- Hero Content -->
+      <div class="hero-content relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+        <!-- Main Content -->
+        <div class="mb-12">
+          <!-- Badge -->
+          <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-full border border-white border-opacity-20 mb-8">
+            <span class="text-sm font-medium"> 🎓Trusted by 500+ Students Worldwide</span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-6">
+            Your Global
+            <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Education
+            </span>
+            <br>Journey Starts Here
+          </h1>
+
+          <!-- Subtitle -->
+          <p class=" text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">
+            We guide students to top universities worldwide with personalized counseling,
+            expert guidance, and comprehensive end-to-end support for your academic success.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a href="form.html" class="hero-btn inline-flex items-center px-8 py-4 font-semibold text-white rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              Get Free Consultation
+            </a>
+            <a href="about us.html" class="inline-flex items-center px-8 py-4 font-semibold text-white border-2 border-white border-opacity-30 rounded-full hover:bg-white hover:bg-opacity-10 hover:border-opacity-50 transition-all duration-300">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="stats-card rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              98%
+            </div>
+            <div class="text-sm text-gray-300">Success Rate</div>
+          </div>
+          <div class="stats-card rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              500+
+            </div>
+            <div class="text-sm text-gray-300">Partner Universities</div>
+          </div>
+          <div class="stats-card rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold mb-2 bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+              50+
+            </div>
+            <div class="text-sm text-gray-300">Countries</div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- About Section -->
@@ -909,16 +1040,15 @@
             <h1 class="!text-[#023e65] !text-5xl font-bold">About Us</h1>
 
             <p>
-              At
-              <span class="highlight"><strong>Globetrek Overseas</strong></span>, we believe that education is the most powerful way to transform
-              lives and it should never be limited by borders. Founded with a
+              <span class="!text-[#2D6F41] !text-1xl font-bold">At Globetrek Overseas, we believe that education is the most powerful way to transform
+              lives and it should never be limited by borders.</span>Founded with a
               clear mission to simplify and personalize the international study
               journey, Globetrek is more than just a consultancy, we're a
               long-term partner in your global academic pursuit.
             </p>
 
             <p class="mission-statement">
-              We don't just send students abroad, we empower futures.
+             <span class="!text-[#023e65] !text-1xl font-bold">We don't just send students abroad, we empower futures.</span>
             </p>
 
             <p>
@@ -926,21 +1056,21 @@
               of experience in international education, student mobility,
               institutional relations, and cross-border admissions. Our
               expertise spans across multiple regions including the
-              <span class="highlight"><strong>UK, Switzerland, Canada, Australia, the US, and the
-                  EU</strong></span>.
+              <span class="!text-[#023e65] !text-1xl font-bold">UK, Switzerland, Canada, Australia, the US, and the
+                  EU</span>.
             </p>
 
             <p>
               Whether you are a student dreaming of top-ranked universities, a
               parent looking for trusted advice, or a channel partner seeking
               ethical collaboration, we provide
-              <span class="highlight">transparent, technology-driven, and student-first
+              <span class="!text-[#023e65] !text-1xl font-bold">transparent, technology-driven, and student-first
                 solutions</span>
               at every step.
             </p>
 
             <div class="tagline">
-              <strong>Globetrek Overseas — Guiding Global Ambitions.</strong>
+              <span class="!text-[#023e65] !text-2xl font-bold">Globetrek Overseas — Guiding Global Ambitions.</span>
             </div>
           </div>
           <div class="about-image">
@@ -1717,7 +1847,8 @@
               <option value="">Select program</option>
               <option value="Study Abroad">Study Abroad</option>
               <option value="Work Visa">Work Visa</option>
-              <option value="PR Visa">PR Visa</option>
+              <option value="IELTS">IELTS</option>
+              <option value="PTE">PTE</option>
               <option value="Other">Other</option>
             </select>
           </div>
