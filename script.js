@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const stories = {
   anjali: {
     flag: "🇨🇭",
-    name: "Anjali R.",
+    name: "Sunita R.",
     university: "Geneva School of Diplomacy, Switzerland",
     quote:
       "I always wanted to study international relations in Europe but didn't know where to start. Globetrek helped me discover a niche program in Switzerland that perfectly matched my interests. They supported me from application to visa to accommodation. Today, I'm studying at one of the most diplomatic hubs in the world!",

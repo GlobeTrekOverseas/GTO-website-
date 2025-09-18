@@ -37,8 +37,8 @@
 
         /* Header */
         header {
-            background: var(--primary);
-            color: white;
+            background: var(--white);
+            color: #ffff;
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -46,7 +46,10 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .header-content {
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -61,14 +64,98 @@
             align-items: center;
         }
 
-        .logo i {
+        .logo img {
+            height: 68px;
+            width: auto;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
             color: var(--secondary);
-            margin-right: 8px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            padding: 0;
+        }
+
+        .dropdown-menu a {
+            color: var(--text);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #eee;
+            margin: 5px 0;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image 2.jpg') center/cover no-repeat;
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -372,6 +459,42 @@
                 position: relative;
                 top: 0;
             }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: var(--primary);
+                width: 100%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: left 0.3s;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.1);
+                margin: 10px 0;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
         }
 
         @media (max-width: 600px) {
@@ -382,20 +505,111 @@
             .step-content {
                 margin-left: 0;
             }
+            
+            .meta-info {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="https://www.globetrekoverseas.com/images/logo.png" class="logo">
-                    
-                    GlobeTrek Overseas
-                </a>
-            </div>
-        </div>
+  <!-- Header Section -->
+    <header class="header">
+      <div class="header-container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="./index.html" class="logo">
+          <img src="GTO.png" alt="Globetrek Overseas" />
+          
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="about us.html">About Us</a></li>
+
+          <!-- Courses Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="business-management.html"><i class="fas fa-chart-line"></i> Business & Management</a>
+              </li>
+              <li>
+                <a href="engineering.html"><i class="fas fa-cogs"></i> Engineering</a>
+              </li>
+              <li>
+                <a href="medicine.html"><i class="fas fa-heartbeat"></i> Medicine & Healthcare</a>
+              </li>
+              <li>
+                <a href="law.html"><i class="fas fa-gavel"></i> Law</a>
+              </li>
+              <li>
+                <a href="IELTS.html"><i class="fas fa-book"></i>IELTS</a>
+              </li>
+              <li>
+                <a href="PTE.html"><i class="fas fa-book"></i>PTE</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Our Services Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#"><i class="fas fa-user-graduate"></i> Career & Course
+                  Counseling</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-university"></i> University Selection &
+                  Applications</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-passport"></i> Visa Assistance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarships &
+                  Funding Guidance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-plane-departure"></i> Pre-Departure &
+                  Post-Arrival Support</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-handshake"></i> Channel Partner Support</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Study Destinations Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Study Destinations <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="united states.html">
+                  <i class="fas fa-landmark"></i> United States</a>
+              </li>
+              <li>
+                <a href="UK.html">
+                  <i class="fas fa-landmark"></i> United Kingdom</a>
+              </li>
+              <li>
+                <a href="australia.html"><i class="fas fa-landmark"></i> Australia</a>
+              </li>
+              <li>
+                <a href="switzerland.html"><i class="fas fa-landmark"></i>Switzerland</a>
+              </li>
+              <li>
+                <a href="germany.html"><i class="fas fa-landmark"></i> Germany</a>
+              </li>
+              <li class="dropdown-divider"></li>
+            </ul>
+          </li>
+          <li><a href="success stories.html">Success Stories</a></li>
+          <li><a href="News&Articles.html">News&Articles</a></li>
+          <li><a href="contact us.html">Contact</a></li>
+        </ul>
+      </div>
     </header>
 
     <!-- Hero Section -->
@@ -405,7 +619,7 @@
                 <h1>Step-by-Step Guide: How to Apply for a Student Visa to the UK (2025 Edition)</h1>
                 <p>Everything you need to know about the UK student visa process for 2025</p>
                 <div class="meta-info">
-                    <span><i class="far fa-calendar"></i> Published: 28 august, 2025</span>
+                    <span><i class="far fa-calendar"></i> Published: 28 August, 2025</span>
                     <span><i class="far fa-clock"></i> Reading Time: 10 minutes</span>
                 </div>
             </div>
@@ -416,9 +630,9 @@
     <div class="breadcrumb">
         <div class="container">
             <ul class="breadcrumb-content">
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href="News&Articles.html">News&Articles</Article></a></li>
+                <li><a href="News&Articles.html">News & Articles</a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
                 <li>UK Student Visa Guide</li>
             </ul>
@@ -645,40 +859,65 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>About GlobeTrek</h3>
-                    <p>We help students achieve their dreams of studying abroad with expert guidance and support.</p>
+                    <h3>About GlobeTrek Overseas</h3>
+                    <p>We are a leading study abroad consultancy dedicated to helping students achieve their international education dreams.</p>
+                    <p>Our expert team provides end-to-end guidance for university selection, applications, and visa processes.</p>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="about us.html">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Study Destinations</a></li>
+                        <li><a href="success stories.html">Success Stories</a></li>
+                        <li><a href="News&Articles.html">News & Articles</a></li>
+                        <li><a href="contact us.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Tower-A, ATS BOUQUET, 618, Block B
-                            Sector 132, Noida, Uttar Pradesh 201304 </p>
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 618 Tower-A, ATS BOUQUET Block B<br>Sector 132 Noida,<br> Uttar Pradesh 201304</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 93113 31899<br>+91 92113 13899</p>
+                    <p><i class="fas fa-envelope"></i> Headoffice@globetrekoverseas.com</p>
                     
-                    <p><i class="fas fa-phone"></i>+91 9311331899 </p>
-                    <p><i class="fas fa-envelope"></i>Headoffice@globetrekoverseas.com </p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" style="color: white; margin-right: 15px;"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/globetrek-overseas/" style="color: white; margin-right: 15px;"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://wa.me/919311331899" style="color: white;"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 GlobeTrek Overseas. All rights reserved.</p>
+                <p>&copy; 2023 GlobeTrek Overseas. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+        
+        // Dropdown toggle for mobile
+        if (window.innerWidth <= 900) {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
