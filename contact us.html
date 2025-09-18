@@ -702,9 +702,9 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn">
           <i class="fas fa-bars"></i>
         </button>
-        <div class="logo">
+         <a href="./index.html" class="logo">
           <img src="images\GTO.png" alt="Globetrek Overseas" class="w-full w-auto h-[68px]" />
-        </div>
+        </a>
 
         <ul class="nav-menu" id="navMenu">
           <li><a href="about us.html">About Us</a></li>
@@ -811,7 +811,7 @@
             <i class="fas fa-map-marker-alt"></i>
             <div>
               <h3>Our Office</h3>
-              <p>Tower-A, ATS BOUQUET, 618, Block B, Sector 132, Noida<br>Uttar Pradesh 201304</p>
+              <p> 618 Tower-A, ATS BOUQUET Block B Sector 132 Noida<br> Uttar Pradesh 201304</p>
             </div>
           </div>
           <div class="info-item">
@@ -952,58 +952,205 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-grid">
+     <!-- Footer -->
+    <footer class="footer" style="
+        background-color: white;
+        color: #023e65;
+        padding: 40px 0 20px;
+        border-top: 1px solid #eee;
+      ">
+      <div class="footer-grid" style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        ">
         <!-- Company Info Column -->
         <div class="footer-col">
-          <img src="images/GTO.png" alt="GlobeTrek Overseas Logo">
-          <p class="footer-about">We are a leading study abroad consultancy dedicated to helping students achieve their international education dreams.</p>
+          <div class="logo" style="text-align: center">
+            <img src="images\GTO.png" alt="Globetrek Overseas" style="height: 80px; margin-bottom: 20px" />
+          </div>
+          <p class="footer-about" style="
+              text-align:  right center;
+              line-height: 1.6;
+              margin-bottom: 25px;
+              color: #023e65;
+            ">
+            <span style="font-weight: bold;"> We are a leading study abroad consultancy dedicated to helping
+            students achieve their international education dreams.</span>
+          </p>
           <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" aria-label="Follow us on Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/globetrek-overseas/" aria-label="Connect with us on LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://wa.me/919311331899" aria-label="Contact us on WhatsApp" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <h3 style="
+                text-align: right center;
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+                color: #015f18;
+              ">
+              <span style="font-weight: bold;">Follow Us</span>
+            </h3>
+            <div class="social-links" style="
+                display: flex;
+                justify-content:  right center;
+                gap: 15px;
+                margin-bottom: 20px;
+              ">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" class="social-icon" style="
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  transition: all 0.5s ease;
+                " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/globetrek-overseas/" class="social-icon" style="
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  transition: all 0.5s ease;
+                " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/919311331899" target="_blank" class="social-icon" style="
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  transition: all 0.3s ease;
+                " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Quick Links Column -->
         <div class="footer-col">
-          <h3 class="footer-links-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Study Destinations</a></li>
-            <li><a href="success-stories.html">Success Stories</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="contact-us.html">Contact</a></li>
+          <h3 class="footer-links-title font-bold !text-[#023e65]" style="
+              font-size: 1.2rem;
+              margin-bottom: 20px;
+              position: relative;
+              padding-bottom: 10px;
+              color: #333;
+            ">
+            Quick Links
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60px;
+               
+                background-color: #02406a;
+              "></span>
+          </h3>
+          <ul class="footer-links" style="list-style: none; padding: 0">
+            <li style="margin-bottom: 10px">
+              <a href="about us.html" style="
+                  color: #01500c;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "> <span style="font-weight: bold;">About Us</span></a>
+                
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                  color: #2D6F41;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "> <span style="font-weight: bold;">Our Services</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                  color: #2D6F41;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "> <span style="font-weight: bold;">Study Destinations</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="success stories.html" style="
+                  color: #2D6F41;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "> <span style="font-weight: bold;">Success Stories</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                  color: #2D6F41;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "> <span style="font-weight: bold;">News&Article</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="contact us.html" style="
+                  color: #2D6F41;
+                  text-decoration: none;
+                  transition: color 0.3s;
+                "> <span style="font-weight: bold;">Contact</span></a>
+            </li>
           </ul>
         </div>
 
         <!-- Contact Info Column -->
         <div class="footer-col">
-          <h3 class="footer-contact-title">Contact Us</h3>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Tower-A, ATS BOUQUET, 618, Block B, Sector 132, Noida, Uttar Pradesh 201304</p>
+          <h3 class="footer-contact-title font-bold !text-[#023e65]" style="
+              font-size: 1.2rem;
+              margin-bottom: 20px;
+              position: relative;
+              padding-bottom: 10px;
+              color: #333;
+            ">
+            Contact Us
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                
+                background-color: #023e65;
+              "></span>
+          </h3>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0; line-height: 1.5; color: #023e65">
+              <span style="font-weight: bold;"> 618 Tower-A, ATS BOUQUET Block B<br>Sector 132 Noida,<br> Uttar
+              Pradesh 201304</span>
+            </p>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-phone-alt"></i>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
             <div>
-              <p><a href="tel:+919311331899">+91 93113 31899</a></p>
-              <p><a href="tel:+919211313899">+91 92113 13899</a></p>
+              <p style="margin: 0 0 5px 0">
+                <a href="tel:+919311331899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 93113 31899</span></a>
+              </p>
+              <p style="margin: 0">
+                <a href="tel:+919211313899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 92113 13899</span></a>
+              </p>
             </div>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <p><a href="mailto:Headoffice@globetrekoverseas.com">Headoffice@globetrekoverseas.com</a></p>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-envelope" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0">
+              <a href="mailto:Headoffice@globetrekoverseas.com" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">Headoffice@globetrekoverseas.com</span></a>
+            </p>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2023 Globetrek Overseas. All Rights Reserved.</p>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="
+          text-align: center;
+          padding-top: 30px;
+          margin-top: 30px;
+          border-top: 1px solid #eee;
+        ">
+        <p style="margin: 0; font-size: 0.9rem; color: #023e65">
+           <span style="font-weight: bold;">&copy;2023 Globetrek Overseas. All Rights Reserved.</span>
+        </p>
       </div>
     </footer>
 
